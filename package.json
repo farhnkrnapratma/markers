@@ -1,0 +1,81 @@
+{
+  "name": "@mdrs/markers",
+  "version": "0.1.0-alpha",
+  "description": "High-performance HTML to Markdown converter with full GFM support",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farhnkrnapratma/markers"
+  },
+  "homepage": "https://github.com/farhnkrnapratma/markers#readme",
+  "bugs": {
+    "url": "https://github.com/farhnkrnapratma/markers/issues"
+  },
+  "license": "MIT OR Apache-2.0",
+  "keywords": [
+    "html",
+    "markdown",
+    "converter",
+    "html-to-markdown",
+    "gfm",
+    "napi-rs",
+    "rust"
+  ],
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "*.node",
+    "README.md",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "napi": {
+    "binaryName": "markers",
+    "targets": [
+      "x86_64-unknown-linux-gnu",
+      "x86_64-pc-windows-msvc",
+      "x86_64-apple-darwin",
+      "x86_64-unknown-linux-musl",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-linux-musl",
+      "aarch64-apple-darwin",
+      "aarch64-pc-windows-msvc"
+    ]
+  },
+  "engines": {
+    "node": ">= 14"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release --features napi",
+    "build:debug": "napi build --platform --features napi",
+    "prepublishOnly": "napi pre-publish -t npm --no-gh-release",
+    "test": "ava",
+    "universal": "napi universalize",
+    "version": "napi version"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@napi-rs/cli": "^3.10.9",
+    "ava": "^8.3.0"
+  },
+  "ava": {
+    "timeout": "3m"
+  },
+  "optionalDependencies": {
+    "@mdrs/markers-darwin-arm64": "0.1.0-alpha",
+    "@mdrs/markers-darwin-x64": "0.1.0-alpha",
+    "@mdrs/markers-linux-arm64-gnu": "0.1.0-alpha",
+    "@mdrs/markers-linux-arm64-musl": "0.1.0-alpha",
+    "@mdrs/markers-linux-x64-gnu": "0.1.0-alpha",
+    "@mdrs/markers-linux-x64-musl": "0.1.0-alpha",
+    "@mdrs/markers-win32-arm64-msvc": "0.1.0-alpha",
+    "@mdrs/markers-win32-x64-msvc": "0.1.0-alpha"
+  },
+  "packageManager": "bun@1.4.4",
+  "publishConfig": {
+    "access": "public"
+  }
+}
