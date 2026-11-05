@@ -363,11 +363,7 @@ mod tests {
             .convert(&html, &ConversionOptions::default())
             .unwrap();
         assert!(result.contains("deep text"));
-        assert!(
-            result.len() < 1_000,
-            "output grew to {} bytes",
-            result.len()
-        );
+        assert!(result.len() < 1_000);
     }
 
     fn convert_default(html: &str) -> String {
