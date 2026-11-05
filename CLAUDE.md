@@ -11,7 +11,9 @@ This repo uses **git-flow-next** (classic preset — https://git-flow.sh/). The 
 
 Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org), enforced by commitlint (`commitlint.config.js`) in the `commit-msg` hook and in CI; validate a candidate message with `printf '%s' "<message>" | bunx commitlint`.
 
-CI runs on CircleCI (`.circleci/config.yml`): `reuse lint`, format/lint, tests, `cargo deny`, secret scan (trufflehog) and commitlint on every push.
+CI runs on CircleCI (`.circleci/config.yml`): `reuse lint`, format/lint, tests, coverage (`cargo llvm-cov --locked --summary-only` must report zero uncovered lines and functions), `cargo deny`, secret scan (trufflehog) and commitlint on every push.
+
+Rust integration tests live in `src/specs/` (compiled only under `cfg(test)`) instead of `tests/`, because `cargo llvm-cov` counts a line as covered only when a single test binary executes it; keep new Rust tests in that single binary.
 
 ## graphify
 

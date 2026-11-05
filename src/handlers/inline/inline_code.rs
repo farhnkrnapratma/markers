@@ -65,4 +65,14 @@ mod tests {
     fn test_empty_code() {
         assert_eq!(convert_test("<code></code>"), "");
     }
+
+    #[test]
+    fn code_in_preformatted_text_stays_plain() {
+        let rendered = crate::handlers::testing::render_selected(
+            &InlineCodeHandler,
+            "<pre><code>x`y</code></pre>",
+            "code",
+        );
+        assert_eq!(rendered, "x`y");
+    }
 }

@@ -53,3 +53,6 @@ mod tests {
         assert!(markdown.contains("Second paragraph."));
     }
 }
+
+#[cfg(test)]
+mod specs;

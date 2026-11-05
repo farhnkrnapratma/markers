@@ -45,11 +45,6 @@ impl TagHandler for TableHandler {
                     "tbody" | "tfoot" => {
                         extract_rows(&el, cx, &mut rows);
                     }
-                    "tr" => {
-                        if let Some(row) = extract_row(&el, cx) {
-                            rows.push(row);
-                        }
-                    }
                     _ => {}
                 }
             }
@@ -65,11 +60,9 @@ impl TagHandler for TableHandler {
 
         for row in &rows {
             for (i, cell) in row.iter().enumerate() {
-                if i < col_widths.len() {
-                    col_widths[i] = col_widths[i].max(cell.content.chars().count());
-                    if col_alignments[i] == Alignment::None && cell.alignment != Alignment::None {
-                        col_alignments[i] = cell.alignment;
-                    }
+                col_widths[i] = col_widths[i].max(cell.content.chars().count());
+                if col_alignments[i] == Alignment::None && cell.alignment != Alignment::None {
+                    col_alignments[i] = cell.alignment;
                 }
             }
         }

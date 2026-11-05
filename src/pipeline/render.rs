@@ -65,9 +65,9 @@ impl<'a> RenderPass<'a> {
                     rendered.push_str(&escape_inline_text(&collapse_whitespace(text)));
                 }
                 Node::Element(_) => {
-                    if let Some(child_element) = ElementRef::wrap(child) {
-                        rendered.push_str(&self.element(child_element));
-                    }
+                    rendered.push_str(
+                        &self.element(ElementRef::wrap(child).expect("an element node wraps")),
+                    );
                 }
                 _ => {}
             }

@@ -343,4 +343,24 @@ mod tests {
             finalize_markdown("first\\\nsecond".to_string(), &ConversionOptions::default());
         assert_eq!(result, "first\\\nsecond");
     }
+
+    #[test]
+    fn test_inline_links_to_references_without_links() {
+        assert_eq!(inline_links_to_references("plain text"), "plain text");
+    }
+
+    #[test]
+    fn test_markdown_fence_rejects_indented_code() {
+        assert_eq!(markdown_fence("    ```"), None);
+        assert_eq!(markdown_fence("  ```"), Some((b'`', 3, 5)));
+    }
+
+    #[test]
+    fn test_links_after_an_unclosed_code_span() {
+        let result = inline_links_to_references("a ` b [x](http://u)");
+        assert!(result.starts_with("a ` b [x][1]"));
+        assert_eq!(find_code_span_end(b"``a`b", 2, 2), None);
+        assert_eq!(find_code_span_end(b"``a`", 2, 2), None);
+        assert_eq!(find_code_span_end(b"``a`b``", 2, 2), Some(7));
+    }
 }

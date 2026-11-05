@@ -1,7 +1,7 @@
 use std::fs;
 use std::path::PathBuf;
 
-use markers::{ConversionOptions, convert, convert_with_options};
+use crate::{ConversionOptions, convert, convert_with_options};
 
 fn fixtures_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
@@ -11,7 +11,7 @@ fn fixtures_dir() -> PathBuf {
 
 fn load_fixture(name: &str) -> String {
     let path = fixtures_dir().join(name);
-    fs::read_to_string(&path).unwrap_or_else(|e| panic!("Failed to load fixture {}: {}", name, e))
+    fs::read_to_string(&path).expect(name)
 }
 
 #[test]

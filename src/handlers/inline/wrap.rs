@@ -9,21 +9,27 @@ pub struct WrapHandler {
     close: &'static str,
 }
 
-impl WrapHandler {
-    const fn new(tags: &'static [&'static str], open: &'static str, close: &'static str) -> Self {
-        Self { tags, open, close }
-    }
+macro_rules! wrap {
+    ($tags:expr, $open:expr, $close:expr) => {
+        WrapHandler {
+            tags: $tags,
+            open: $open,
+            close: $close,
+        }
+    };
+}
 
-    pub const PARAGRAPH: Self = Self::new(&["p"], "\n\n", "\n\n");
-    pub const STRONG: Self = Self::new(&["strong", "b"], "**", "**");
-    pub const EMPHASIS: Self = Self::new(&["em", "i"], "*", "*");
-    pub const STRIKETHROUGH: Self = Self::new(&["del", "s", "strike"], "~~", "~~");
-    pub const SUBSCRIPT: Self = Self::new(&["sub"], "<sub>", "</sub>");
-    pub const SUPERSCRIPT: Self = Self::new(&["sup"], "<sup>", "</sup>");
-    pub const KEYBOARD: Self = Self::new(&["kbd"], "<kbd>", "</kbd>");
-    pub const MARK: Self = Self::new(&["mark"], "<mark>", "</mark>");
-    pub const SAMPLE_OUTPUT: Self = Self::new(&["samp"], "<samp>", "</samp>");
-    pub const VARIABLE: Self = Self::new(&["var"], "<var>", "</var>");
+impl WrapHandler {
+    pub const PARAGRAPH: Self = wrap!(&["p"], "\n\n", "\n\n");
+    pub const STRONG: Self = wrap!(&["strong", "b"], "**", "**");
+    pub const EMPHASIS: Self = wrap!(&["em", "i"], "*", "*");
+    pub const STRIKETHROUGH: Self = wrap!(&["del", "s", "strike"], "~~", "~~");
+    pub const SUBSCRIPT: Self = wrap!(&["sub"], "<sub>", "</sub>");
+    pub const SUPERSCRIPT: Self = wrap!(&["sup"], "<sup>", "</sup>");
+    pub const KEYBOARD: Self = wrap!(&["kbd"], "<kbd>", "</kbd>");
+    pub const MARK: Self = wrap!(&["mark"], "<mark>", "</mark>");
+    pub const SAMPLE_OUTPUT: Self = wrap!(&["samp"], "<samp>", "</samp>");
+    pub const VARIABLE: Self = wrap!(&["var"], "<var>", "</var>");
 }
 
 impl TagHandler for WrapHandler {
