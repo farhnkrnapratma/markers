@@ -11,14 +11,14 @@
         "ava": "^8.3.0",
       },
       "optionalDependencies": {
-        "@mdrs/markers-darwin-arm64": "0.1.0-alpha",
-        "@mdrs/markers-darwin-x64": "0.1.0-alpha",
-        "@mdrs/markers-linux-arm64-gnu": "0.1.0-alpha",
-        "@mdrs/markers-linux-arm64-musl": "0.1.0-alpha",
-        "@mdrs/markers-linux-x64-gnu": "0.1.0-alpha",
-        "@mdrs/markers-linux-x64-musl": "0.1.0-alpha",
-        "@mdrs/markers-win32-arm64-msvc": "0.1.0-alpha",
-        "@mdrs/markers-win32-x64-msvc": "0.1.0-alpha",
+        "@farhnkrnapratma/markers-darwin-arm64": "1.0.0-alpha1",
+        "@farhnkrnapratma/markers-darwin-x64": "1.0.0-alpha1",
+        "@farhnkrnapratma/markers-linux-arm64-gnu": "1.0.0-alpha1",
+        "@farhnkrnapratma/markers-linux-arm64-musl": "1.0.0-alpha1",
+        "@farhnkrnapratma/markers-linux-x64-gnu": "1.0.0-alpha1",
+        "@farhnkrnapratma/markers-linux-x64-musl": "1.0.0-alpha1",
+        "@farhnkrnapratma/markers-win32-arm64-msvc": "1.0.0-alpha1",
+        "@farhnkrnapratma/markers-win32-x64-msvc": "1.0.0-alpha1",
       },
     },
   },
@@ -76,6 +76,22 @@
     "@emnapi/runtime": ["@emnapi/runtime@2.0.0-beta.3", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-ayb/PyyLzpwRyFVxeC0uoEHu59QlB1iWGcGsOpXQcaB/Dc+uGfBmNmpCHp3HmTT0t8lSsMmg3j7+tdJW/TlHjQ=="],
 
     "@emnapi/wasi-threads": ["@emnapi/wasi-threads@2.2.0", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-JP7OYH38Q7+pyTAe14raZHLQIK7BDKbdwji+Xi3pcd/6QkJYQH3SX4wu6EplGrGJWRepoNzedfm0G3B9Z4e9Rw=="],
+
+    "@farhnkrnapratma/markers-darwin-arm64": ["@farhnkrnapratma/markers-darwin-arm64@1.0.0-alpha1", "", { "os": "darwin", "cpu": "arm64" }, "sha512-mAIRncv7zeXYpK7vgSG4Hd3fP3L/1T/VlQGAwOC8+a0W1yZFqEQN8jkdN/iF0Z0xJPw6Q3aGNX8t03Jx1ITofA=="],
+
+    "@farhnkrnapratma/markers-darwin-x64": ["@farhnkrnapratma/markers-darwin-x64@1.0.0-alpha1", "", { "os": "darwin", "cpu": "x64" }, "sha512-DwnyKXcrCPsEUDq0t3et2i8T1NmtO7u/c4yUFUxThLba06Fsi5ct4hfn7XshQ0ZW/u3Z9tWUluW6rHBdgJfvvw=="],
+
+    "@farhnkrnapratma/markers-linux-arm64-gnu": ["@farhnkrnapratma/markers-linux-arm64-gnu@1.0.0-alpha1", "", { "os": "linux", "cpu": "arm64", "libc": "glibc" }, "sha512-HjEEpf8g5NN9QGh3gieXLqoVJB77+9zDewN0PSKaBphtx/NebYCTr2T8jP54YoCjHL6uzIJTXCZrpT/9X4dRuw=="],
+
+    "@farhnkrnapratma/markers-linux-arm64-musl": ["@farhnkrnapratma/markers-linux-arm64-musl@1.0.0-alpha1", "", { "os": "linux", "cpu": "arm64", "libc": "musl" }, "sha512-v0e1x/tBbczAaVD94VQ0St1u1dd3khzVAoaRoyJOY1VgM4Lrky9f8Zahi1BvaOVmf+jLlXTUxJfNfByjHSQwmw=="],
+
+    "@farhnkrnapratma/markers-linux-x64-gnu": ["@farhnkrnapratma/markers-linux-x64-gnu@1.0.0-alpha1", "", { "os": "linux", "cpu": "x64", "libc": "glibc" }, "sha512-+7r/70LkGskY5hCTQGkR6cceIuhBLhj/UJb5Io01dQm5TZo0gW/4lwavldNQnjV/oCwdHyqs/nXcYOB+5gQqBQ=="],
+
+    "@farhnkrnapratma/markers-linux-x64-musl": ["@farhnkrnapratma/markers-linux-x64-musl@1.0.0-alpha1", "", { "os": "linux", "cpu": "x64", "libc": "musl" }, "sha512-JPI0wIKVlYabMQgxVoT9+xJzLKtz8ydPqfV2HBj22XJERzDSP7FJtf1MimxCry2OD7uujS/Gij/xh5lfskRH4A=="],
+
+    "@farhnkrnapratma/markers-win32-arm64-msvc": ["@farhnkrnapratma/markers-win32-arm64-msvc@1.0.0-alpha1", "", { "os": "win32", "cpu": "arm64" }, "sha512-QZ6IwFW9JZ7bO+wRHP8mXbgVVaGk9pxuIWDVmCdDYM/ULXdlp6Xx4K/HyFYDEUX86hJyUVqTaKkI6lEBfAAJ3Q=="],
+
+    "@farhnkrnapratma/markers-win32-x64-msvc": ["@farhnkrnapratma/markers-win32-x64-msvc@1.0.0-alpha1", "", { "os": "win32", "cpu": "x64" }, "sha512-ffHlMOF5Z4cbnrUn57Iwf0n/D5VvmdYNVVTFbPjPQjIG/hfRgUNtTePogMa94R3uPXDuKqn/cL66dPog67rB5g=="],
 
     "@inquirer/ansi": ["@inquirer/ansi@2.0.10", "", {}, "sha512-dwrc+1aqVZpHNkNDswXGtn1typ+Pxpo5FHZRyBw1le7onEJUkPUkYOY1FIFC1LvFMYUqqLuWBwElhAmencL7MQ=="],
 
