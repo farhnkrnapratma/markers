@@ -1,5 +1,8 @@
 # markers
 
+[![CI](https://img.shields.io/circleci/build/github/farhnkrnapratma/markers/main?label=CI)](https://app.circleci.com/pipelines/github/farhnkrnapratma/markers) [![npm](https://img.shields.io/npm/v/@farhnkrnapratma/markers?label=npm)](https://www.npmjs.com/package/@farhnkrnapratma/markers) [![crates.io](https://img.shields.io/crates/v/markers?label=crates.io)](https://crates.io/crates/markers) ![Language](https://img.shields.io/badge/language-Rust-orange?logo=rust) ![Tests](https://img.shields.io/badge/tests-cargo%20test-orange?logo=rust) ![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)
+
+
 High-performance HTML to Markdown conversion for LLMs, written in Rust.
 
 ## Status
