@@ -11,22 +11,22 @@ license = "MIT OR Apache-2.0"
 keywords = ["html", "markdown", "converter", "llm", "parser"]
 categories = ["parsing", "text-processing", "web-programming"]
 exclude = [
-    "/CLAUDE.md",
-    "/.claude",
-    "/.github",
-    "/.githooks",
-    "/commitlint.config.js",
-    "/artifacts",
-    "/bun.lock",
-    "/examples/*.js",
-    "/examples/*.html",
-    "/graphify-out",
-    "/index.d.ts",
-    "/index.js",
-    "/node_modules",
-    "/npm",
-    "/package.json",
-    "/tests/index.test.js",
+  "/CLAUDE.md",
+  "/.claude",
+  "/.github",
+  "/.githooks",
+  "/commitlint.config.js",
+  "/artifacts",
+  "/bun.lock",
+  "/examples/*.js",
+  "/examples/*.html",
+  "/graphify-out",
+  "/index.d.ts",
+  "/index.js",
+  "/node_modules",
+  "/npm",
+  "/package.json",
+  "/tests/index.test.js",
 ]
 
 [lib]

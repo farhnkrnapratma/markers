@@ -2,25 +2,24 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main) [![npm](https://img.shields.io/npm/v/@farhnkrnapratma/markers?label=npm)](https://www.npmjs.com/package/@farhnkrnapratma/markers) [![crates.io](https://img.shields.io/crates/v/markers?label=crates.io)](https://crates.io/crates/markers) ![Language](https://img.shields.io/badge/language-Rust-orange?logo=rust) ![Tests](https://img.shields.io/badge/tests-cargo%20test-orange?logo=rust) ![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)
 
-
 High-performance HTML to Markdown conversion for LLMs, written in Rust.
 
 ## Status
 
 Alpha (`v1.0.0-alpha1`). The API can still change before the first stable release.
 
-| Registry | Name |
-| --- | --- |
-| crates.io | [`markers`](https://crates.io/crates/markers) |
-| npm | [`@farhnkrnapratma/markers`](https://www.npmjs.com/package/@farhnkrnapratma/markers) |
+| Registry  | Name                                                                                 |
+| --------- | ------------------------------------------------------------------------------------ |
+| crates.io | [`markers`](https://crates.io/crates/markers)                                        |
+| npm       | [`@farhnkrnapratma/markers`](https://www.npmjs.com/package/@farhnkrnapratma/markers) |
 
 One package, one `src/`. The bindings are optional Cargo features:
 
-| Feature | Source | Purpose |
-| --- | --- | --- |
-| *(none)* | `src/lib.rs` | Rust library |
-| `napi` | `src/bindings/node.rs` | Node.js / Bun bindings, published as `@farhnkrnapratma/markers` |
-| `wasm` | `src/bindings/wasm.rs` | WebAssembly bindings |
+| Feature  | Source                 | Purpose                                                         |
+| -------- | ---------------------- | --------------------------------------------------------------- |
+| _(none)_ | `src/lib.rs`           | Rust library                                                    |
+| `napi`   | `src/bindings/node.rs` | Node.js / Bun bindings, published as `@farhnkrnapratma/markers` |
+| `wasm`   | `src/bindings/wasm.rs` | WebAssembly bindings                                            |
 
 ## Install
 
@@ -54,24 +53,27 @@ fn main() -> Result<(), String> {
 Node.js / Bun:
 
 ```js
-const { convert, convertAsync } = require('@farhnkrnapratma/markers')
+const { convert, convertAsync } = require("@farhnkrnapratma/markers");
 
-convert('<h1>Hello</h1>')
-convert('<h1>Hello</h1>', { headingStyle: 'setext', baseUrl: 'https://example.com' })
-await convertAsync('<h1>Hello</h1>')
+convert("<h1>Hello</h1>");
+convert("<h1>Hello</h1>", {
+  headingStyle: "setext",
+  baseUrl: "https://example.com",
+});
+await convertAsync("<h1>Hello</h1>");
 ```
 
 ## Options
 
-| Option (Rust / JS) | Values | Default |
-| --- | --- | --- |
-| `heading_style` / `headingStyle` | `atx`, `setext` | `atx` |
-| `link_style` / `linkStyle` | `inline`, `referenced` | `inline` |
-| `code_fence` / `codeFence` | `` ` ``, `~` | `` ` `` |
-| `bullet_marker` / `bulletMarker` | `-`, `*`, `+` | `-` |
-| `base_url` / `baseUrl` | URL used to resolve relative links and images | none |
-| `exclude_selectors` / `excludeSelectors` | CSS selectors to drop | none |
-| `include_selectors` / `includeSelectors` | CSS selectors kept even if an exclude selector matches | none |
+| Option (Rust / JS)                       | Values                                                 | Default  |
+| ---------------------------------------- | ------------------------------------------------------ | -------- |
+| `heading_style` / `headingStyle`         | `atx`, `setext`                                        | `atx`    |
+| `link_style` / `linkStyle`               | `inline`, `referenced`                                 | `inline` |
+| `code_fence` / `codeFence`               | `` ` ``, `~`                                           | `` ` ``  |
+| `bullet_marker` / `bulletMarker`         | `-`, `*`, `+`                                          | `-`      |
+| `base_url` / `baseUrl`                   | URL used to resolve relative links and images          | none     |
+| `exclude_selectors` / `excludeSelectors` | CSS selectors to drop                                  | none     |
+| `include_selectors` / `includeSelectors` | CSS selectors kept even if an exclude selector matches | none     |
 
 ## Repository layout
 
