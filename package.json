@@ -60,7 +60,7 @@
     "@commitlint/config-conventional": "^21.2.4",
     "@napi-rs/cli": "^3.10.12",
     "ava": "8.4.0",
-    "fallow": "^3.43.2"
+    "fallow": "^3.44.0"
   },
   "ava": {
     "timeout": "3m"
@@ -75,7 +75,7 @@
     "@farhnkrnapratma/markers-win32-arm64-msvc": "1.0.0-alpha1",
     "@farhnkrnapratma/markers-win32-x64-msvc": "1.0.0-alpha1"
   },
-  "packageManager": "bun@1.4.4",
+  "packageManager": "bun@1.4.5",
   "publishConfig": {
     "access": "public"
   },
