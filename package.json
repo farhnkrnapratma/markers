@@ -60,7 +60,7 @@
     "@commitlint/config-conventional": "^21.2.4",
     "@napi-rs/cli": "^3.10.12",
     "ava": "8.4.0",
-    "fallow": "^3.44.0"
+    "fallow": "^3.46.0"
   },
   "ava": {
     "timeout": "3m"
