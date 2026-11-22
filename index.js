@@ -99,12 +99,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-android-arm64/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -122,12 +122,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-android-arm-eabi/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -159,12 +159,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-win32-x64-gnu/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -182,12 +182,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-win32-x64-msvc/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -206,12 +206,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-win32-ia32-msvc/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -229,12 +229,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-win32-arm64-msvc/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -257,12 +257,12 @@ function requireNative() {
       const bindingPackageVersion =
         require("@farhnkrnapratma/markers-darwin-universal/package.json").version;
       if (
-        bindingPackageVersion !== "1.0.0-alpha1" &&
+        bindingPackageVersion !== "1.0.0-alpha2" &&
         process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
         process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
       ) {
         throw new Error(
-          `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+          `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
         );
       }
       return binding;
@@ -280,12 +280,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-darwin-x64/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -303,12 +303,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-darwin-arm64/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -332,12 +332,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-freebsd-x64/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -355,12 +355,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-freebsd-arm64/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -378,12 +378,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-freebsd-ppc64/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -408,12 +408,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-x64-musl/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -431,12 +431,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-x64-gnu/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -456,12 +456,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-arm64-musl/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -479,12 +479,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-arm64-gnu/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -504,12 +504,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-arm-musleabihf/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -527,12 +527,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-arm-gnueabihf/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -552,12 +552,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-loong64-musl/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -575,12 +575,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-loong64-gnu/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -600,12 +600,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-riscv64-musl/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -623,12 +623,12 @@ function requireNative() {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-linux-riscv64-gnu/package.json").version;
           if (
-            bindingPackageVersion !== "1.0.0-alpha1" &&
+            bindingPackageVersion !== "1.0.0-alpha2" &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
             process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
           ) {
             throw new Error(
-              `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
           return binding;
@@ -647,12 +647,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-linux-ppc64-gnu/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -670,12 +670,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-linux-s390x-gnu/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -699,12 +699,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-openharmony-arm64/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -722,12 +722,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-openharmony-x64/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -745,12 +745,12 @@ function requireNative() {
         const bindingPackageVersion =
           require("@farhnkrnapratma/markers-openharmony-arm/package.json").version;
         if (
-          bindingPackageVersion !== "1.0.0-alpha1" &&
+          bindingPackageVersion !== "1.0.0-alpha2" &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK &&
           process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== "0"
         ) {
           throw new Error(
-            `Native binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+            `Native binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
           );
         }
         return binding;
@@ -915,9 +915,9 @@ if (!nativeBinding || forceWasi) {
         ) {
           const bindingPackageVersion =
             require("@farhnkrnapratma/markers-wasm32-wasi/package.json").version;
-          if (bindingPackageVersion !== "1.0.0-alpha1") {
+          if (bindingPackageVersion !== "1.0.0-alpha2") {
             throw new Error(
-              `WASI binding package version mismatch, expected 1.0.0-alpha1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
+              `WASI binding package version mismatch, expected 1.0.0-alpha2 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`,
             );
           }
         }
