@@ -17,6 +17,11 @@ pub struct NodeAnnotation {
 
 pub type Annotations = FxHashMap<NodeId, NodeAnnotation>;
 
+const NON_CONTENT: [&str; 11] = [
+    "head", "script", "style", "noscript", "template", "nav", "svg", "iframe", "object", "canvas",
+    "select",
+];
+
 pub struct ElementFilter {
     pub exclude: Vec<Selector>,
     pub include: Vec<Selector>,
@@ -39,7 +44,8 @@ impl ElementFilter {
     }
 
     pub fn excludes(&self, element: &ElementRef) -> bool {
-        self.exclude.iter().any(|sel| sel.matches(element))
+        NON_CONTENT.contains(&element.value().name())
+            || self.exclude.iter().any(|sel| sel.matches(element))
     }
 
     pub fn includes(&self, element: &ElementRef) -> bool {
