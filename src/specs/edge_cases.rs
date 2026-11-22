@@ -199,3 +199,21 @@ fn very_deep_nesting_does_not_crash_or_hang() {
     let result = convert(&html);
     assert!(result.contains("survivor"));
 }
+
+#[test]
+fn drops_non_content_elements_by_default() {
+    let html = "<html><head><title>Title</title><style>a{}</style></head><body>\
+        <nav><a href=\"/\">Home</a></nav><script>alert(1)</script><noscript>Enable JS</noscript>\
+        <svg><title>icon</title></svg><iframe>frame</iframe><select><option>pick</option></select>\
+        <p>Body</p></body></html>";
+    assert_eq!(convert(html), "Body");
+}
+
+#[test]
+fn include_selectors_keep_default_dropped_elements() {
+    let options = crate::ConversionOptions::new().include_selectors(vec!["nav".to_string()]);
+    let markdown =
+        crate::convert_with_options("<nav><a href=\"/\">Home</a></nav><p>Body</p>", &options)
+            .unwrap();
+    assert!(markdown.contains("[Home](/)"));
+}

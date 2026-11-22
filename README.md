@@ -2,15 +2,15 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main) [![npm](https://img.shields.io/npm/v/@farhnkrnapratma/markers/alpha?label=npm)](https://www.npmjs.com/package/@farhnkrnapratma/markers) [![crates.io](https://img.shields.io/crates/v/markers?label=crates.io)](https://crates.io/crates/markers) [![docs.rs](https://img.shields.io/docsrs/markers)](https://docs.rs/markers) ![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)
 
-Converts HTML to clean GitHub Flavored Markdown. It is built for turning web pages into text for large language models: unsafe links are removed and CSS selectors let you keep only the content you want. The converter is written in Rust and is available as a Rust crate and as an npm package for Node.js and Bun.
+Converts HTML to clean GitHub Flavored Markdown. It is built for turning web pages into text for large language models: page chrome and non-text elements are dropped, unsafe links are removed, and CSS selectors let you keep only the content you want. The converter is written in Rust and is available as a Rust crate and as an npm package for Node.js and Bun.
 
 > **Alpha.** The API may still change before 1.0.0. On npm, install the `alpha` tag.
 
 ## Features
 
 - **GitHub Flavored Markdown output**: headings, lists, task lists, tables, blockquotes, code blocks, strikethrough, links and images, plus definition lists, `<details>`, figures and abbreviations.
-- **Safe links**: `javascript:` links are removed and their text is kept.
-- **Selectors**: drop parts of a page with CSS selectors (for example `nav`, `script`, `style`), and keep the parts you name even inside dropped ones.
+- **Clean text for LLMs**: `<head>`, `<script>`, `<style>`, `<noscript>`, `<template>`, `<nav>`, `<svg>`, `<iframe>`, `<object>`, `<canvas>` and `<select>` are dropped, and `javascript:` links are removed while their text is kept.
+- **Selectors**: drop more of a page with CSS selectors, and keep the parts you name even inside dropped ones (for example `includeSelectors: ["nav"]` to keep navigation).
 - **Relative URLs resolved** against a base URL you provide.
 - **Robust on hostile input**: documents nested more than 5,000 levels deep are rejected instead of exhausting the stack.
 
@@ -34,7 +34,7 @@ convert("<h1>Hello</h1>"); // "# Hello"
 
 convert(html, {
   baseUrl: "https://example.com/blog/",
-  excludeSelectors: ["nav", "footer", "script", "style"],
+  excludeSelectors: ["footer", ".ads"],
 });
 
 await convertAsync(html); // runs off the main thread
