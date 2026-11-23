@@ -1,10 +1,10 @@
 # markers
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main) [![codecov](https://codecov.io/gh/farhnkrnapratma/markers/graph/badge.svg)](https://codecov.io/gh/farhnkrnapratma/markers) [![npm](https://img.shields.io/npm/v/@farhnkrnapratma/markers/alpha?label=npm)](https://www.npmjs.com/package/@farhnkrnapratma/markers) [![crates.io](https://img.shields.io/crates/v/markers?label=crates.io)](https://crates.io/crates/markers) [![docs.rs](https://img.shields.io/docsrs/markers)](https://docs.rs/markers) ![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main) [![codecov](https://codecov.io/gh/farhnkrnapratma/markers/graph/badge.svg)](https://codecov.io/gh/farhnkrnapratma/markers) [![npm](https://img.shields.io/npm/v/@farhnkrnapratma/markers?label=npm)](https://www.npmjs.com/package/@farhnkrnapratma/markers) [![crates.io](https://img.shields.io/crates/v/markers?label=crates.io)](https://crates.io/crates/markers) [![docs.rs](https://img.shields.io/docsrs/markers)](https://docs.rs/markers) ![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)
 
 Converts HTML to clean GitHub Flavored Markdown. It is built for turning web pages into text for large language models: page chrome and non-text elements are dropped, unsafe links are removed, and CSS selectors let you keep only the content you want. The converter is written in Rust and is available as a Rust crate and as an npm package for Node.js and Bun.
 
-> **Alpha.** The API may still change before 1.0.0. On npm, install the `alpha` tag.
+> **Alpha.** The API may still change before 1.0.0.
 
 ## Features
 
@@ -17,7 +17,7 @@ Converts HTML to clean GitHub Flavored Markdown. It is built for turning web pag
 ## Install
 
 ```sh
-npm install @farhnkrnapratma/markers@alpha   # or: bun add @farhnkrnapratma/markers@alpha
+npm install @farhnkrnapratma/markers         # or: bun add @farhnkrnapratma/markers
 cargo add markers                            # Rust
 ```
 
