@@ -1,9 +1,22 @@
 {
   "name": "@farhnkrnapratma/markers",
   "version": "1.0.0-alpha3",
-  "description": "Convert HTML to clean GitHub Flavored Markdown for LLMs. Native addon for Node.js and Bun, written in Rust.",
+  "description": "Convert HTML to clean GitHub Flavored Markdown for LLMs. Native addon for Node.js and Bun and WebAssembly for browsers, written in Rust.",
   "main": "index.js",
   "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "browser": "./browser.mjs",
+      "default": "./index.js"
+    },
+    "./lazy": {
+      "types": "./lazy.d.ts",
+      "default": "./lazy.mjs"
+    },
+    "./wasm": "./wasm/markers_bg.wasm",
+    "./package.json": "./package.json"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/farhnkrnapratma/markers"
@@ -25,6 +38,14 @@
   "files": [
     "index.js",
     "index.d.ts",
+    "browser.mjs",
+    "lazy.mjs",
+    "lazy.d.ts",
+    "wasm/markers.js",
+    "wasm/markers.d.ts",
+    "wasm/markers_bg.wasm",
+    "wasm/markers_bg.wasm.d.ts",
+    "wasm/package.json",
     "README.md",
     "LICENSE-MIT",
     "LICENSE-APACHE"
@@ -54,8 +75,10 @@
     "artifacts": "napi artifacts",
     "build": "napi build --platform --release --features napi",
     "build:debug": "napi build --platform --features napi",
+    "build:wasm": "node scripts/build-wasm.mjs",
     "prepublishOnly": "napi pre-publish -t npm --no-gh-release",
     "test": "ava",
+    "test:wasm": "node scripts/test-wasm.mjs",
     "universal": "napi universalize",
     "version": "napi version",
     "prepare": "bash .githooks/install.sh"

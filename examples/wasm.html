@@ -83,7 +83,7 @@
     </p>
 
     <script type="module">
-      import init, { convert, convertWithOptions } from "./pkg/markers_wasm.js";
+      import { convert, load } from "../lazy.mjs";
 
       const htmlInput = document.getElementById("html-input");
       const mdOutput = document.getElementById("md-output");
@@ -93,7 +93,7 @@
       const referencedCheckbox = document.getElementById("referenced");
 
       async function run() {
-        await init();
+        await load();
         status.textContent = "WASM loaded!";
         convertBtn.disabled = false;
 
@@ -113,10 +113,7 @@
 
         try {
           const start = performance.now();
-          const md =
-            Object.keys(options).length > 0
-              ? convertWithOptions(html, options)
-              : convert(html);
+          const md = convert(html, options);
           const elapsed = (performance.now() - start).toFixed(2);
 
           mdOutput.value = md;

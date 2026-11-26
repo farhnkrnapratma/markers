@@ -5,3 +5,4 @@ npm/
 pkg/
 *.node
 graphify-out/
+wasm/

@@ -2,7 +2,7 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/stZqvYiNAK17m5zy7ERCb/5KDDkHQnUroSHKP957pxaW/tree/main) [![codecov](https://codecov.io/gh/farhnkrnapratma/markers/graph/badge.svg)](https://codecov.io/gh/farhnkrnapratma/markers) [![npm](https://img.shields.io/npm/v/@farhnkrnapratma/markers?label=npm)](https://www.npmjs.com/package/@farhnkrnapratma/markers) [![crates.io](https://img.shields.io/crates/v/markers?label=crates.io)](https://crates.io/crates/markers) [![docs.rs](https://img.shields.io/docsrs/markers)](https://docs.rs/markers) ![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)
 
-Converts HTML to clean GitHub Flavored Markdown. It is built for turning web pages into text for large language models: page chrome and non-text elements are dropped, unsafe links are removed, and CSS selectors let you keep only the content you want. The converter is written in Rust and is available as a Rust crate and as an npm package for Node.js and Bun.
+Converts HTML to clean GitHub Flavored Markdown. It is built for turning web pages into text for large language models: page chrome and non-text elements are dropped, unsafe links are removed, and CSS selectors let you keep only the content you want. The converter is written in Rust and is available as a Rust crate, as an npm package for Node.js and Bun, and as WebAssembly for browsers.
 
 > **Alpha.** The API may still change before 1.0.0.
 
@@ -76,7 +76,15 @@ let markdown = markers::convert_with_options(html, &options)?;
 
 ## WebAssembly
 
-The crate's `wasm` feature builds WebAssembly bindings with the same API; [`examples/wasm.html`](https://github.com/farhnkrnapratma/markers/blob/main/examples/wasm.html) shows them in a browser. The npm package does not include a WebAssembly build yet.
+The npm package also ships a WebAssembly build with the same `convert` and `convertAsync` functions. Bundlers pick it for browsers through the package's `browser` export, which loads the module before your code runs. To load it on demand instead, import from `@farhnkrnapratma/markers/lazy`:
+
+```js
+import { convertAsync, load } from "@farhnkrnapratma/markers/lazy";
+
+await convertAsync("<h1>Hello</h1>"); // loads the module on first use
+```
+
+`load(source)` accepts what the module should be loaded from: a URL, a `Response`, the bytes, or a compiled `WebAssembly.Module`, for runtimes such as Cloudflare Workers that cannot fetch it by URL. The file itself is exported as `@farhnkrnapratma/markers/wasm`. [`examples/wasm.html`](https://github.com/farhnkrnapratma/markers/blob/main/examples/wasm.html) shows the build in a page.
 
 ## Contributing
 

@@ -30,20 +30,14 @@ impl From<ConversionOptions> for RawOptions {
 }
 
 #[wasm_bindgen]
-pub fn convert(html: &str) -> String {
-    crate::convert(html)
-}
-
-#[wasm_bindgen(js_name = convertWithOptions)]
-pub fn convert_with_options(html: &str, options: JsValue) -> Result<String, JsError> {
-    let opts: Option<ConversionOptions> = if options.is_undefined() || options.is_null() {
-        None
+pub fn convert(html: &str, options: JsValue) -> Result<String, JsError> {
+    let opts: ConversionOptions = if options.is_undefined() || options.is_null() {
+        ConversionOptions::default()
     } else {
-        Some(serde_wasm_bindgen::from_value(options)?)
+        serde_wasm_bindgen::from_value(options)?
     };
-
-    let internal_opts = RawOptions::from(opts.unwrap_or_default())
+    let options = RawOptions::from(opts)
         .into_options()
         .map_err(|e| JsError::new(&e))?;
-    crate::convert_with_options(html, &internal_opts).map_err(|error| JsError::new(&error))
+    crate::convert_with_options(html, &options).map_err(|error| JsError::new(&error))
 }
