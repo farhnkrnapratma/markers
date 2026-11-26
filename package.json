@@ -1,6 +1,6 @@
 {
   "name": "@farhnkrnapratma/markers",
-  "version": "1.0.0-alpha3",
+  "version": "1.0.0-alpha4",
   "description": "Convert HTML to clean GitHub Flavored Markdown for LLMs. Native addon for Node.js and Bun and WebAssembly for browsers, written in Rust.",
   "main": "index.js",
   "types": "index.d.ts",
