@@ -17,13 +17,17 @@ impl TagHandler for BlockquoteHandler {
             return String::new();
         }
 
+        let mut previous_blank = false;
         let quoted: String = content
             .lines()
-            .map(|line| {
-                if line.is_empty() {
-                    ">".to_string()
-                } else {
-                    format!("> {}", line)
+            .filter_map(|line| {
+                let blank = line.trim().is_empty();
+                let repeated = blank && previous_blank;
+                previous_blank = blank;
+                match (repeated, blank) {
+                    (true, _) => None,
+                    (false, true) => Some(">".to_string()),
+                    (false, false) => Some(format!("> {}", line)),
                 }
             })
             .collect::<Vec<_>>()

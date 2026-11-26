@@ -217,3 +217,36 @@ fn include_selectors_keep_default_dropped_elements() {
             .unwrap();
     assert!(markdown.contains("[Home](/)"));
 }
+
+#[test]
+fn indented_html_converts_like_compact_html() {
+    let cases = [
+        ("<ol>\n  <li>a</li>\n  <li>b</li>\n</ol>", "1. a\n2. b"),
+        (
+            "<ul>\n  <li><input type=checkbox checked> done</li>\n  <li><input type=checkbox> todo</li>\n</ul>",
+            "- [x] done\n- [ ] todo",
+        ),
+        (
+            "<blockquote>\n  <p>q</p>\n  <p>r</p>\n</blockquote>",
+            "> q\n>\n> r",
+        ),
+        ("<h2>F</h2>\n<ul>\n  <li>x</li>\n</ul>", "## F\n\n- x"),
+    ];
+    for (html, expected) in cases {
+        let compact = html.split('\n').map(str::trim_start).collect::<String>();
+        assert_eq!(convert(&compact), expected, "compact {compact:?}");
+        assert_eq!(convert(html), expected, "indented {html:?}");
+    }
+    let nested =
+        "<ul>\n  <li>a\n    <ul>\n      <li>b</li>\n    </ul>\n  </li>\n  <li>c</li>\n</ul>";
+    assert_eq!(
+        convert(nested),
+        convert("<ul><li>a <ul><li>b</li></ul></li><li>c</li></ul>")
+    );
+}
+
+#[test]
+fn whitespace_between_inline_elements_is_kept() {
+    assert_eq!(convert("<p><b>a</b> <i>b</i></p>"), "**a** *b*");
+    assert_eq!(convert("<p>x<span> </span>y</p>"), "x y");
+}
